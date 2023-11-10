@@ -1,0 +1,47 @@
+name: testing
+
+on:
+  push:
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+      - run: flutter --version
+
+      - name: Install Dependencies
+        run: |
+          flutter pub get          
+          dart run build_runner build
+
+      - name: Verify Formatting
+        if: matrix.os == 'ubuntu-latest'
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze Project Source
+        run: flutter analyze
+
+      - name: Run Tests
+        run: flutter test --coverage > test_execution.log
+
+      - name: Store Tests Artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: testing_logs--${{ matrix.os }}
+          path: |
+            coverage
+            test_execution.log
