@@ -1,6 +1,7 @@
 ## 1.0.1
 
 * Downgrade `analyzer` for `flutter_gherkin`
+* Add builder definition
 
 ## 1.0.0
 

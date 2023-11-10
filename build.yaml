@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      flutter_gherkin_wrapper|gherkin_generic_generator:
+        enabled: true
+      flutter_gherkin_wrapper|class_list_generator:
+        enabled: true
+
+builders:
+  gherkin_generic_generator:
+    import: "package:flutter_gherkin_wrapper/gen/gherkin_generic_generator.dart"
+    builder_factories: ["gherkinGenericGenerator"]
+    build_extensions: {".dart": [".generic.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
+  class_list_generator:
+    import: "package:flutter_gherkin_wrapper/gen/class_list_generator.dart"
+    builder_factories: ["classListGenerator"]
+    build_extensions: {".dart": [".list.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
