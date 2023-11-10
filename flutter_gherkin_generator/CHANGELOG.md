@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Separate from generator since an error `import of dart:mirrors is not supported`
+
 ## 1.0.2
 
 * Fix steps injection: `ExecutableStepIterator.inject(classList);`

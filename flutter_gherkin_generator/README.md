@@ -1,12 +1,15 @@
-# Flutter Gherkin Wrapper
+# Flutter Gherkin Generator
 
 [![Test Status](https://github.com/lyskouski/flutter_gherkin_wrapper/actions/workflows/test.yml/badge.svg)](https://github.com/lyskouski/dart_class_wrapper/actions/workflows/test.yml)
 [![Build Status](https://github.com/lyskouski/flutter_gherkin_wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/lyskouski/dart_class_wrapper/actions/workflows/build.yml)
 <a href="https://www.buymeacoffee.com/lyskouski"><img height="20" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lyskouski&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
 
-Wrapper is used to execute widget (component) tests with Cucumber / Gherkin 
-notation instead of integration tests as done for original 
+Wrapper is used to execute widget (component) tests with Cucumber / Gherkin
+notation instead of integration tests as done for original
 `flutter_gherkin`-package.
+
+Has to be used together with `flutter_gherkin_wrapper`-package.
+
 
 ## Getting started
 

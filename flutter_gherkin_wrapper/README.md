@@ -8,6 +8,8 @@ Wrapper is used to execute widget (component) tests with Cucumber / Gherkin
 notation instead of integration tests as done for original 
 `flutter_gherkin`-package.
 
+Has to be used together with `flutter_gherkin_generator`-package.
+
 ## Getting started
 
 ### Initialization
