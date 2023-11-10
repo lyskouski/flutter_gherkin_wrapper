@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Downgrade `analyzer` for `flutter_gherkin`
+
 ## 1.0.0
 
 * Use Gherkin / Cucumber notation for widget tests
