@@ -22,6 +22,8 @@ class Generic extends GivenGeneric {}
 // ./test/e2e/steps_iterator.dart
 @GenerateListOfClasses(['given', 'when', 'then'])
 import 'steps_iterator.list.dart';
+
+ExecutableStepIterator.inject(classList);
 ```
 ```gherkin
 # /test/e2e/steps/open_expense_form.resource.feature

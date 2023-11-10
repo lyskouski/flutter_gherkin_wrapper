@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Fix steps injection: `ExecutableStepIterator.inject(classList);`
+
 ## 1.0.1
 
 * Downgrade `analyzer` for `flutter_gherkin`

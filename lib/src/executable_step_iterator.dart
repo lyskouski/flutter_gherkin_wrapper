@@ -25,6 +25,9 @@ class ExecutableStepIterator {
     ]);
   }
 
+  static void inject(List<StepDefinitionBase<World>> scope) =>
+      classList.addAll(scope);
+
   // Registry step definitions
   List<ExecutableStep> _register(List<dynamic> steps) {
     return steps
