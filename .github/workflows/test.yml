@@ -9,8 +9,6 @@ permissions: read-all
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +23,7 @@ jobs:
           dart format --output=none --set-exit-if-changed .
           flutter analyze
           flutter test
-        working-directory: $GITHUB_WORKSPACE/flutter_gherkin_wrapper
+        working-directory: ./flutter_gherkin_wrapper
 
       - name: Validate Generator
         run: | 
@@ -33,4 +31,4 @@ jobs:
           dart format --output=none --set-exit-if-changed .
           flutter analyze
           flutter test
-        working-directory: $GITHUB_WORKSPACE/flutter_gherkin_generator
+        working-directory: ./flutter_gherkin_generator

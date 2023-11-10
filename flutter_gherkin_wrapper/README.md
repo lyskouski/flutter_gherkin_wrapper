@@ -17,7 +17,23 @@ Has to be used together with `flutter_gherkin_generator`-package.
 // Generate steps from resources
 // ./test/e2e/given/generic.dart
 @GenerateGherkinResources(['../steps'])
-class Generic extends GivenGeneric {}
+class Generics extends GivenGeneric {
+  @override
+  RegExp get pattern => RegExp('%step%');
+
+  @override
+  // Execute sub-step
+  Future<void> executeStep() async {
+    final reporter = FileReporter();
+    final step = await FileReader().getFromString('''%feature%''', reporter);
+    final result = await FileRunner(FileRunner.tester, reporter).run(step);
+    if (!result) {
+      reporter.publish();
+    }
+    expectSync(result, true);
+  }
+}
+
 
 // Generate list of steps
 // ./test/e2e/steps_iterator.dart

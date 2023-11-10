@@ -10,6 +10,7 @@ jobs:
     permissions:
       id-token: write
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
@@ -21,13 +22,13 @@ jobs:
         run: | 
           flutter pub get
           flutter pub publish --dry-run
-        working-directory: $GITHUB_WORKSPACE/flutter_gherkin_wrapper
+        working-directory: ./flutter_gherkin_wrapper
 
       - name: Check Generator
         run: | 
           flutter pub get
           flutter pub publish --dry-run
-        working-directory: $GITHUB_WORKSPACE/flutter_gherkin_generator
+        working-directory: ./flutter_gherkin_generator
 
 # [TBD] Not working by now
 #      - name: Publish to pub.dev
