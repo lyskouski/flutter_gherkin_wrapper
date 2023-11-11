@@ -4,7 +4,6 @@
 
 import 'dart:io';
 
-import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:flutter_test/flutter_test.dart';
 // ignore: depend_on_referenced_packages
 import 'package:gherkin/gherkin.dart';
@@ -15,6 +14,7 @@ import 'package:gherkin/src/feature_file_runner.dart';
 
 import 'executable_step_iterator.dart';
 import 'file_reader.dart';
+import 'test_configuration.dart';
 
 class FileRunner {
   late FeatureFile featureFile;
@@ -25,7 +25,7 @@ class FileRunner {
     // ignore: prefer_initializing_formals
     FileRunner.tester = tester;
     runner = FeatureFileRunner(
-      FlutterTestConfiguration()..defaultTimeout = const Duration(minutes: 5),
+      WrapperConfiguration(),
       TagExpressionEvaluator(),
       ExecutableStepIterator().aggregate(),
       reporter ?? ProgressReporter(),

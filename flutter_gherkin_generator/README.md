@@ -13,6 +13,22 @@ Has to be used together with `flutter_gherkin_wrapper`-package.
 
 ## Getting started
 
+Check https://github.com/lyskouski/flutter_gherkin_wrapper/tree/main/example
+
+Install:
+```yaml
+dev_dependencies:
+  flutter_gherkin_generator: 1.0.4
+  flutter_gherkin_wrapper: 1.0.4
+  build_runner: ^2.4.6
+```
+
+Run:
+```console
+dart run build_runner build --delete-conflicting-outputs
+flutter test
+```
+
 ### Initialization
 ```dart
 // Generate steps from resources
@@ -34,13 +50,6 @@ class Generics extends GivenGeneric {
     expectSync(result, true);
   }
 }
-
-// Generate list of steps
-// ./test/e2e/steps_iterator.dart
-@GenerateListOfClasses(['given', 'when', 'then'])
-import 'steps_iterator.list.dart';
-
-ExecutableStepIterator.inject(classList);
 ```
 ```gherkin
 # /test/e2e/steps/open_expense_form.resource.feature
@@ -54,6 +63,10 @@ Feature: Verify Basic Actions
 
 ### Execution
 ```dart
+// Generate list of steps
+@GenerateListOfClasses(['given', 'when', 'then'])
+import 'steps_iterator.list.dart';
+
 void main() {
   Iterable<File> features = Directory('./test/e2e')
       .listSync(recursive: true)
@@ -64,6 +77,7 @@ void main() {
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     ScreenCapture.enableScreenCapture();
+    ExecutableStepIterator.inject(classList);
     // MainTest.cleanUpData();
   });
 

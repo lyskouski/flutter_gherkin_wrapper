@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Added example project
+
 ## 1.0.3
 
 * Separate from generator since an error `import of dart:mirrors is not supported`

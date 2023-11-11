@@ -1,6 +1,6 @@
 name: flutter_gherkin_generator
 description: Gherkin Generator is used to prepare files for Gherkin Wrapper (flutter_gherkin_wrapper) package
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/lyskouski/flutter_gherkin_wrapper/tree/main/flutter_gherkin_generator
 repository: https://github.com/lyskouski/flutter_gherkin_wrapper
 issue_tracker: https://github.com/lyskouski/flutter_gherkin_wrapper/issues

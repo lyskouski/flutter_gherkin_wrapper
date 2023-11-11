@@ -17,7 +17,15 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Validate Wrapper
+      - name: Check Generator
+        run: |
+          flutter pub get
+          dart format --output=none --set-exit-if-changed .
+          flutter analyze
+          flutter test
+        working-directory: ./flutter_gherkin_generator
+          
+      - name: Check Wrapper
         run: |
           flutter pub get
           dart format --output=none --set-exit-if-changed .
@@ -25,10 +33,9 @@ jobs:
           flutter test
         working-directory: ./flutter_gherkin_wrapper
 
-      - name: Validate Generator
-        run: | 
+      - name: Validate
+        run: |
           flutter pub get
-          dart format --output=none --set-exit-if-changed .
-          flutter analyze
+          dart run build_runner build --delete-conflicting-outputs
           flutter test
-        working-directory: ./flutter_gherkin_generator
+        working-directory: ./example
