@@ -1,8 +1,8 @@
 name: flutter_gherkin_wrapper
 description: | 
-  Gherkin Wrapper is used to execute widget (component) tests with Cucumber / 
-  Gherkin notation
-version: 1.0.4
+  Gherkin Wrapper is used to improve widget and integration tests with 
+  Cucumber / Gherkin notation
+version: 1.0.5
 homepage: https://github.com/lyskouski/flutter_gherkin_wrapper/tree/main/flutter_gherkin_wrapper
 repository: https://github.com/lyskouski/flutter_gherkin_wrapper
 issue_tracker: https://github.com/lyskouski/flutter_gherkin_wrapper/issues

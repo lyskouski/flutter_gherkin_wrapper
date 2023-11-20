@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Fix misprints
+
 ## 1.0.4
 
 * Added example project

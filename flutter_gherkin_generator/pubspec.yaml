@@ -1,6 +1,8 @@
 name: flutter_gherkin_generator
-description: Gherkin Generator is used to prepare files for Gherkin Wrapper (flutter_gherkin_wrapper) package
-version: 1.0.4
+description: |
+  Gherkin Generator is used to generate list of actors and nested scenarios for 
+  Gherkin
+version: 1.0.5
 homepage: https://github.com/lyskouski/flutter_gherkin_wrapper/tree/main/flutter_gherkin_generator
 repository: https://github.com/lyskouski/flutter_gherkin_wrapper
 issue_tracker: https://github.com/lyskouski/flutter_gherkin_wrapper/issues
